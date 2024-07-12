@@ -1,15 +1,11 @@
 const removeFromArray = function(array, ...theArgs) {
-    for (const argument of theArgs) {
-        let i = 0;
-        do {
-            if (array[i] === argument) {
-                array.splice(i, 1);
-                continue;
-            }
-            i++;
-        } while (i < array.length);
+    let newArray = [];
+    for (const item of array) {
+        if (!theArgs.includes(item)) {
+            newArray.push(item);
+        } 
     }
-    return array;
+    return newArray;
 };
 
 // Do not edit below this line
